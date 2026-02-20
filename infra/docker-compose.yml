@@ -1,0 +1,63 @@
+# SECURITY: Set ADMIN_API_KEY in .env (project root) before running.
+# Never use the default in production. See docs/deployment-and-pilot.md
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: agent_identity
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d agent_identity"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../backend/api
+      dockerfile: Dockerfile
+    environment:
+      PORT: "8080"
+      HOST: 0.0.0.0
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/agent_identity
+      REDIS_URL: redis://redis:6379
+      ISSUER_KID: identity-ca-v1
+      ISSUER_PRIVATE_JWK_FILE: /run/secrets/issuer_private_jwk.json
+      TIMESTAMP_SKEW_MS: "60000"
+      NONCE_TTL_SECONDS: "120"
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-replace-with-strong-admin-api-key}
+      RATE_LIMIT_PER_MINUTE: "120"
+      NODE_ENV: production
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ../backend/api/secrets/issuer_private_jwk.json:/run/secrets/issuer_private_jwk.json:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:8080/readyz || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:

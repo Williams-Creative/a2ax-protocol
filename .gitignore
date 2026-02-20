@@ -1,0 +1,55 @@
+# Dependencies
+backend/api/node_modules/
+sdk/typescript/node_modules/
+
+# Build artifacts
+backend/api/dist/
+sdk/typescript/dist/
+
+# Secrets and env (never commit)
+backend/api/secrets/
+backend/api/.env
+.env
+infra/.env
+.env.local
+.env.*.local
+.env.test
+.env.development
+*.pem
+*.key
+**/issuer_private_jwk.json
+*.p12
+*.pfx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE and tooling (exclude from public repo)
+.cursor/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Internal docs (not for public repo)
+docs/TRADEMARK_REGISTRATION.md
+LAUNCH_INSTRUCTIONS.md
+
+# Local overrides
+docker-compose.override.yml
+*.local
+
+# Test and coverage
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
