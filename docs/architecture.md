@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart TB
-  subgraph L1 [Layer 1: Open Trust Protocol]
+  subgraph L1 [Layer 1: A2AX Protocol]
     identity[identity]
     crypto[crypto]
     handshake[handshake]

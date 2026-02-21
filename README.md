@@ -17,7 +17,7 @@
 
 | Layer | Scope | Contents |
 |-------|-------|----------|
-| **Layer 1 – Open Trust Protocol** (this repo) | Core trust logic | Identity, Attestations, Events, Verification, Handshake |
+| **Layer 1 – A2AX Protocol** (this repo) | Core trust logic | Identity, Attestations, Events, Verification, Handshake |
 | **Layer 2 – Optional Extensions** | Pluggable contracts | Risk scoring, Escrow, Compliance (interfaces only) |
 | **Layer 3 – Commercial Services** (not in repo) | Hosted offerings | Managed trust graph, Enterprise dashboards, Economic network services |
 
