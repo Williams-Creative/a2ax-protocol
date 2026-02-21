@@ -1,5 +1,5 @@
 {
-  "name": "nexus-sdk",
+  "name": "a2ax-sdk",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@nexus/protocol": "file:../../protocol",
+    "@a2ax/protocol": "file:../../protocol",
     "jose": "^5.9.6"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-# Nexus default policy template.
+# A2AX default policy template.
 # Trust policy is verifier-controlled. Copy and customize.
 # No embedded trust anchors.
 

@@ -1,5 +1,5 @@
 {
-  "name": "@nexus/extensions",
+  "name": "@a2ax/extensions",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -16,6 +16,6 @@
     }
   },
   "dependencies": {
-    "@nexus/protocol": "file:../protocol"
+    "@a2ax/protocol": "file:../protocol"
   }
 }

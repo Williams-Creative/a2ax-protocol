@@ -1,8 +1,8 @@
-# Nexus Protocol Versioning
+# A2AX Protocol Versioning
 
 ## Semantic Versioning
 
-The Nexus Protocol follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH):
+The A2AX Protocol follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH):
 
 - **MAJOR**: Breaking changes to the protocol. Incompatible handshakes, schema changes that invalidate existing agents/certs.
 - **MINOR**: New features, backward-compatible. New attestation types, optional fields.

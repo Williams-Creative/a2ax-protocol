@@ -1,9 +1,9 @@
 /**
- * Portable Nexus Agent Certificate format.
+ * Portable A2AX Agent Certificate format.
  * Verification works without contacting the registry.
  */
 
-export type NexusAgentCertificatePayload = {
+export type A2AXAgentCertificatePayload = {
   agent_id: string;
   public_key?: string;
   public_jwk?: Record<string, unknown>;
@@ -14,11 +14,11 @@ export type NexusAgentCertificatePayload = {
   metadata?: Record<string, unknown>;
 };
 
-export type NexusAgentCertificate = {
+export type A2AXAgentCertificate = {
   /** JWT/JWS string (compact serialization) */
   jws: string;
   /** Decoded payload for inspection */
-  payload: NexusAgentCertificatePayload & {
+  payload: A2AXAgentCertificatePayload & {
     iss?: string;
     exp?: number;
     iat?: number;

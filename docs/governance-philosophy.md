@@ -1,12 +1,12 @@
 # Governance Philosophy
 
-## Nexus Is Not
+## A2AX Is Not
 
 - A central authority
 - A gatekeeper
 - A mandatory registry
 
-## Nexus Is
+## A2AX Is
 
 - A trust verification standard
 - A pluggable identity layer
@@ -19,4 +19,4 @@
 2. **No embedded anchors**: Empty trust store by default
 3. **Portable verification**: Works without registry
 4. **Fork-safe**: Protocol compiles and runs independently
-5. **Vendor-neutral**: No hardcoded Nexus endpoints or commercial hooks
+5. **Vendor-neutral**: No hardcoded A2AX endpoints or commercial hooks

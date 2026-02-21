@@ -1,31 +1,31 @@
-# NEXUS Trademark Policy
+# A2AX Trademark Policy
 
-**NEXUS** and **NEXUS Protocol** are trademarks of Williams Creative.
+**A2AX** and **A2AX Protocol** are trademarks of Williams Creative.
 
 ## Permitted Use
 
-You may use the NEXUS name when:
+You may use the A2AX name when:
 
 - Referring to this project or the protocol in a factual, descriptive manner
 - Crediting the project in documentation or acknowledgments
-- Discussing compatibility or integration with NEXUS
+- Discussing compatibility or integration with A2AX
 
 ## Not Permitted
 
-You may not use the NEXUS name or branding in a way that:
+You may not use the A2AX name or branding in a way that:
 
 - Implies endorsement, sponsorship, or affiliation with Williams Creative
 - Causes confusion about the source or origin of your product or service
-- Suggests your product is the official NEXUS implementation
-- Uses NEXUS as a primary or dominant brand for your own commercial offering
+- Suggests your product is the official A2AX implementation
+- Uses A2AX as a primary or dominant brand for your own commercial offering
 
 ## Commercial Use
 
-If you build on NEXUS (e.g., managed hosting, escrow, enterprise features), you may use the code under the MIT License. Use your own brand name for your product. You may state that your product "uses NEXUS Protocol" or "is built on NEXUS" — but do not imply you are the official NEXUS provider.
+If you build on A2AX (e.g., managed hosting, escrow, enterprise features), you may use the code under the MIT License. Use your own brand name for your product. You may state that your product "uses A2AX Protocol" or "is built on A2AX" — but do not imply you are the official A2AX provider.
 
 ## Registration
 
-Williams Creative reserves the right to register the NEXUS trademark. This policy applies regardless of registration status.
+Williams Creative reserves the right to register the A2AX trademark. This policy applies regardless of registration status.
 
 ## Questions
 

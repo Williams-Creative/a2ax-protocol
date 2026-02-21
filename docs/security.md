@@ -12,7 +12,7 @@ Revoked agents are tracked via a revocation list. The protocol defines a `Revoca
 
 ### Revocation Provider (Injectable)
 
-The protocol does not depend on Nexus-operated infrastructure for revocation. The server injects a `RevocationProvider` that can read from:
+The protocol does not depend on A2AX-operated infrastructure for revocation. The server injects a `RevocationProvider` that can read from:
 
 - Local database
 - Distributed revocation list (CRL, OCSP, or custom)
@@ -45,4 +45,4 @@ interface RevocationProvider {
 
 - Revoked agents are rejected at verify and handshake
 - Revocation is immediate (cache TTL applies)
-- No dependency on external Nexus services for revocation checks
+- No dependency on external A2AX services for revocation checks

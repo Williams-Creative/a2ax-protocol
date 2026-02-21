@@ -1,5 +1,5 @@
 /**
- * Nexus Protocol - Open Trust Protocol
+ * A2AX Protocol - Agent-to-Agent Exchange
  * Core trust logic with no commercial dependencies.
  */
 

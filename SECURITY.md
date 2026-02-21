@@ -40,7 +40,7 @@ Before committing or pushing:
 
 ## Security Best Practices
 
-When deploying NEXUS:
+When deploying A2AX:
 
 - Run `npm audit` in `backend/api` and address vulnerabilities before production
 - Use a strong `ADMIN_API_KEY` (min 16 chars, high entropy)

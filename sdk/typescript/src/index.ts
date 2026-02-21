@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 import { exportJWK, generateKeyPair, importJWK, SignJWT, type JWK, type KeyLike } from "jose";
-import { PROTOCOL_VERSION } from "@nexus/protocol";
+import { PROTOCOL_VERSION } from "@a2ax/protocol";
 
 export type SignedRequestInput = {
   agentId: string;

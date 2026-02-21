@@ -3,8 +3,8 @@ import { SignJWT, jwtVerify } from "jose";
 import { config } from "../config.js";
 import { metrics } from "../metrics/index.js";
 
-const ADMIN_ISSUER = "nexus-admin";
-const ADMIN_AUDIENCE = "nexus-admin";
+const ADMIN_ISSUER = "a2ax-admin";
+const ADMIN_AUDIENCE = "a2ax-admin";
 
 async function getAdminKey() {
   return await webcrypto.subtle.importKey(

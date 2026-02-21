@@ -1,11 +1,11 @@
-# Prometheus alert rules for NEXUS Protocol pilot
+# Prometheus alert rules for A2AX Protocol pilot
 # Add to your Prometheus config: rule_files: [ "infra/prometheus-alerts.yml" ]
 
 groups:
-  - name: nexus_pilot
+  - name: a2ax_pilot
     rules:
       - alert: AgentIdentityDown
-        expr: up{job="nexus-api"} == 0
+        expr: up{job="a2ax-api"} == 0
         for: 1m
         labels:
           severity: critical

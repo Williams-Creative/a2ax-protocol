@@ -1,15 +1,15 @@
-# NEXUS Protocol
+# A2AX Protocol
 
-**N**etwork for **E**xchange and **T**rust **U**nified by **S**ignatures
+**A**gent **t**o **A**gent **E**xchange
 
-**Nexus is the open trust standard and identity layer for autonomous economic systems.** It provides verifiable identity, cryptographic verification, capability-scoped permissions, and trust scoring for AI-to-AI (A2A) interaction—enabling agents to transact, attest, and collaborate with confidence.
+**A2AX is the open trust standard and identity layer for autonomous economic systems.** It provides verifiable identity, cryptographic verification, capability-scoped permissions, and trust scoring for AI-to-AI (A2A) interaction—enabling agents to transact, attest, and collaborate with confidence.
 
 > *The agent economy will not fail due to lack of intelligence. It will fail due to lack of trust.*  
-> Nexus is the foundational infrastructure for agent-native identity and trust.
+> A2AX is the foundational infrastructure for agent-native identity and trust.
 
-**This protocol does not require Nexus-operated infrastructure to function.** You can fork, self-host, and run verification independently.
+**This protocol does not require A2AX-operated infrastructure to function.** You can fork, self-host, and run verification independently.
 
-**Nexus defines verification mechanics. Trust policy is verifier-controlled.** No embedded trust anchors; trust store ships empty.
+**A2AX defines verification mechanics. Trust policy is verifier-controlled.** No embedded trust anchors; trust store ships empty.
 
 ---
 
@@ -47,8 +47,8 @@ The protocol (`/protocol`) compiles and runs in isolation. Extensions and commer
 ### 1. Clone and setup
 
 ```bash
-git clone https://github.com/Williams-Creative/nexus-protocol.git
-cd nexus-protocol
+git clone https://github.com/Williams-Creative/a2ax-protocol.git
+cd a2ax-protocol
 ```
 
 ### 2. Provision secrets
@@ -82,11 +82,11 @@ docker compose -f infra/docker-compose.yml up --build
 ## Project Structure
 
 ```
-nexus-protocol/
+a2ax-protocol/
 ├── protocol/             # Core trust logic (certificate, identity, crypto, handshake, permissions, trust store, policy)
 ├── config/               # defaultPolicy.yaml, trust/anchors/
 ├── bundles/              # Optional trust bundles (community, enterprise)
-├── cli/                  # nexus trust install
+├── cli/                  # a2ax trust install
 ├── sdk/typescript/       # TypeScript SDK
 ├── sdk/python/           # Python SDK
 ├── extensions/           # Optional interfaces (TrustScoring, Escrow, Compliance) + examples
@@ -108,7 +108,7 @@ nexus-protocol/
 | [Trust Bundles](docs/trust-bundles.md) | Installable issuer keys |
 | [Federation Roadmap](docs/federation-roadmap.md) | Cross-registry trust (future) |
 | [Governance](docs/governance.md) | Contribution, versioning, neutrality |
-| [Governance Philosophy](docs/governance-philosophy.md) | What Nexus is and is not |
+| [Governance Philosophy](docs/governance-philosophy.md) | What A2AX is and is not |
 | [Cryptographic Flow](docs/crypto.md) | Ed25519, JWT, verification flow |
 | [Handshake Protocol](docs/handshake.md) | A2A session establishment |
 | [Security](docs/security.md) | Revocation, key rotation |
@@ -131,7 +131,7 @@ nexus-protocol/
 
 MIT License — see [LICENSE](LICENSE). Copyright (c) 2026 Williams Creative.
 
-**Trademark:** NEXUS and NEXUS Protocol are trademarks of Williams Creative. Use of the NEXUS name or branding in a manner that implies endorsement or causes confusion is not permitted. See [TRADEMARK.md](TRADEMARK.md) for details.
+**Trademark:** A2AX and A2AX Protocol are trademarks of Williams Creative. Use of the A2AX name or branding in a manner that implies endorsement or causes confusion is not permitted. See [TRADEMARK.md](TRADEMARK.md) for details.
 
 ---
 

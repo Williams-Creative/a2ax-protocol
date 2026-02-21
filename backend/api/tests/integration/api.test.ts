@@ -3,7 +3,7 @@
  * Requires: docker compose -f infra/docker-compose.yml up -d
  * Run: npm run test:integration
  */
-import { PROTOCOL_VERSION } from "@nexus/protocol";
+import { PROTOCOL_VERSION } from "@a2ax/protocol";
 import { generateKeyPair, exportJWK, importJWK, SignJWT } from "jose";
 import { describe, expect, it, beforeAll } from "vitest";
 

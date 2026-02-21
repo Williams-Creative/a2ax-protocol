@@ -1,6 +1,6 @@
 /**
  * Compliance interface - abstract contract only.
- * No logic, no Nexus references, optional.
+ * No logic, no A2AX-specific references, optional.
  */
 
 export interface ComplianceVerifyInput {

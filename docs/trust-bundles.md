@@ -13,7 +13,7 @@ Bundles are installable packages that add issuer keys to the trust store.
 ## Installation
 
 ```bash
-nexus trust install community
+a2ax trust install community
 ```
 
 Copies issuer keys into trust store. Does not modify core protocol logic. Removable.

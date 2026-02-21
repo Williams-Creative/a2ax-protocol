@@ -1,6 +1,6 @@
 # Trust Model
 
-Nexus defines verification mechanics. **Trust policy is verifier-controlled.**
+A2AX defines verification mechanics. **Trust policy is verifier-controlled.**
 
 ## No Embedded Trust Anchors
 

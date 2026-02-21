@@ -10,7 +10,7 @@ import {
   evaluateScope,
   verifyPortableCertificate,
   type CapabilityManifest
-} from "@nexus/protocol";
+} from "@a2ax/protocol";
 import { config } from "../config.js";
 import { hashJsonBody, signCertificate, verifyAgentJwt } from "../crypto/signing.js";
 import { query } from "../db/postgres.js";

@@ -1,6 +1,6 @@
-# Contributing to NEXUS Protocol
+# Contributing to A2AX Protocol
 
-Thank you for your interest in contributing to NEXUS. We welcome contributions from the community.
+Thank you for your interest in contributing to A2AX. We welcome contributions from the community.
 
 ## Code of Conduct
 

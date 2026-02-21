@@ -1,6 +1,6 @@
 # Portable Certificates
 
-Nexus Agent Certificates can be verified without contacting the registry.
+A2AX Agent Certificates can be verified without contacting the registry.
 
 ## Format
 
@@ -29,7 +29,7 @@ Certificates are JWTs (JWS compact) with claims:
 The trust store holds issuer public keys. Empty by default. Add issuers via:
 
 - `config/trust/anchors/*.pem` or `*.json`
-- Trust bundle: `nexus trust install <bundle>`
+- Trust bundle: `a2ax trust install <bundle>`
 - Federation (future)
 
 ## Endpoint

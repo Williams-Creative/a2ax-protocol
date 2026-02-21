@@ -29,5 +29,5 @@
 ## Neutrality Commitment
 
 - The protocol is vendor-neutral and forkable.
-- No hardcoded Nexus endpoints or commercial hooks in the protocol.
+- No hardcoded A2AX endpoints or commercial hooks in the protocol.
 - Revocation, trust scoring, and storage are injectable; implementations can use any infrastructure.

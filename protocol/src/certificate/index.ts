@@ -1,6 +1,6 @@
 export type {
-  NexusAgentCertificate,
-  NexusAgentCertificatePayload,
+  A2AXAgentCertificate,
+  A2AXAgentCertificatePayload,
   PortableVerificationInput,
   PortableVerificationResult,
   IssuerPublicKey

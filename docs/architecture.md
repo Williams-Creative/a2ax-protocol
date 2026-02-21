@@ -70,7 +70,7 @@ The server injects implementations for:
 - **RevocationProvider**: Checks if agent is revoked (e.g. Postgres + Redis)
 - **TrustScoring** (optional): Computes risk score from attestation graph
 
-Protocol defines interfaces; server provides implementations. No Nexus-specific infrastructure required.
+Protocol defines interfaces; server provides implementations. No A2AX-specific infrastructure required.
 
 ## Governance Boundaries
 
@@ -84,6 +84,6 @@ Protocol defines interfaces; server provides implementations. No Nexus-specific 
 2. Build `protocol/` in isolation (`npm run build` in protocol).
 3. Replace server implementation: use your own Postgres, Redis, or different storage.
 4. Implement `RevocationProvider`, `AuditWriter`, `IssuerSigner` with your infrastructure.
-5. Deploy. The protocol verifies agents without any Nexus-operated services.
+5. Deploy. The protocol verifies agents without any A2AX-operated services.
 
-The protocol compiles, runs tests, and verifies agents even if Nexus (the company) disappears.
+The protocol compiles, runs tests, and verifies agents even if A2AX (the company) disappears.

@@ -11,11 +11,11 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROTOCOL_SRC = join(__dirname, "..", "src");
 const FORBIDDEN_PATTERNS = [
-  /from\s+["']@nexus\/extensions/,
+  /from\s+["']@a2ax\/extensions/,
   /from\s+["']\.\.\/extensions/,
   /from\s+["']\.\.\/\.\.\/extensions/,
-  /from\s+["']@nexus\/sdk/,
-  /from\s+["']nexus-sdk/,
+  /from\s+["']@a2ax\/sdk/,
+  /from\s+["']a2ax-sdk/,
   /from\s+["']\.\.\/sdk/,
   /from\s+["']\.\.\/\.\.\/sdk/,
   /from\s+["'].*\/admin/,

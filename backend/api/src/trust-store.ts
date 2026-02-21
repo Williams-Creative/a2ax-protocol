@@ -8,7 +8,7 @@ import { join } from "node:path";
 import {
   TrustStoreInMemory,
   type IssuerPublicKey
-} from "@nexus/protocol";
+} from "@a2ax/protocol";
 
 let trustStoreInstance: TrustStoreInMemory | null = null;
 

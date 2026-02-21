@@ -1,9 +1,9 @@
 /**
  * TrustScoring interface - abstract contract only.
- * No implementation, no Nexus-specific references.
+ * No implementation, no A2AX-specific references.
  */
 
-import type { AttestationGraph } from "@nexus/protocol";
+import type { AttestationGraph } from "@a2ax/protocol";
 
 export type RiskTier = "Low" | "Medium" | "High";
 

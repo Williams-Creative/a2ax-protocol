@@ -20,7 +20,7 @@ Before public rollout, address the following security and operational requiremen
 2. **Create an alias** (optional):
    ```bash
    aws kms create-alias \
-     --alias-name alias/nexus-issuer \
+     --alias-name alias/a2ax-issuer \
      --target-key-id <key-id>
    ```
 
@@ -53,14 +53,14 @@ Before public rollout, address the following security and operational requiremen
 1. Store the admin key:
    ```bash
    aws secretsmanager create-secret \
-     --name nexus/admin-api-key \
+     --name a2ax/admin-api-key \
      --secret-string "your-strong-admin-key-min-16-chars"
    ```
 
 2. **At deploy time** (e.g. in ECS task definition, Kubernetes init container, or startup script):
    ```bash
    export ADMIN_API_KEY=$(aws secretsmanager get-secret-value \
-     --secret-id nexus/admin-api-key \
+     --secret-id a2ax/admin-api-key \
      --query SecretString --output text)
    ```
 
@@ -79,7 +79,7 @@ env:
   - name: ADMIN_API_KEY
     valueFrom:
       secretKeyRef:
-        name: nexus-secrets
+        name: a2ax-secrets
         key: admin-api-key
 ```
 
@@ -120,8 +120,8 @@ Rotate by updating the Secret and rolling the deployment.
 ```nginx
 server {
   listen 443 ssl http2;
-  ssl_certificate     /etc/ssl/certs/nexus.crt;
-  ssl_certificate_key /etc/ssl/private/nexus.key;
+  ssl_certificate     /etc/ssl/certs/a2ax.crt;
+  ssl_certificate_key /etc/ssl/private/a2ax.key;
   ssl_protocols       TLSv1.2 TLSv1.3;
 
   location / {
@@ -174,14 +174,14 @@ server {
 
 ```bash
 # Create bucket with Object Lock (must be enabled at creation)
-aws s3api create-bucket --bucket nexus-audit-archive
-aws s3api put-bucket-versioning --bucket nexus-audit-archive \
+aws s3api create-bucket --bucket a2ax-audit-archive
+aws s3api put-bucket-versioning --bucket a2ax-audit-archive \
   --versioning-configuration Status=Enabled
-aws s3api put-object-lock-configuration --bucket nexus-audit-archive \
+aws s3api put-object-lock-configuration --bucket a2ax-audit-archive \
   --object-lock-configuration '{"ObjectLockEnabled":"Enabled","Rule":{"DefaultRetention":{"Mode":"GOVERNANCE","Years":7}}}'
 
 # Upload audit export (retention applied per object or bucket default)
-aws s3 cp audit-export-2026-02-21.ndjson s3://nexus-audit-archive/2026/02/21/audit.ndjson \
+aws s3 cp audit-export-2026-02-21.ndjson s3://a2ax-audit-archive/2026/02/21/audit.ndjson \
   --metadata '{"retention-years":"7"}'
 ```
 

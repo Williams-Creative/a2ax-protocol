@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { evaluateScope } from "@nexus/protocol";
+import { evaluateScope } from "@a2ax/protocol";
 
 describe("capability policy", () => {
   it("allows granted scope with amount under cap", () => {
