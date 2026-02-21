@@ -47,15 +47,11 @@ docs/TRADEMARK_REGISTRATION.md
 docs/FOUNDER_AUDIT.md
 docs/SECURITY_AUDIT.md
 docs/FINAL_VERIFICATION.md
-LAUNCH_INSTRUCTIONS.md
 
 # Internal planning / working docs
-a2ax_docx_extract.docx
-a2ax_docx_extract/
-a2ax_plan.zip
-nexus_docx_extract.docx
-nexus_docx_extract/
-nexus_plan.zip
+*_docx_extract.docx
+*_docx_extract/
+*_plan.zip
 
 # Local overrides
 docker-compose.override.yml
