@@ -101,6 +101,8 @@ a2ax-protocol/
 
 | Document | Description |
 |----------|-------------|
+| [Specification](docs/specification.md) | Formal spec: abstract, design principles, terminology |
+| [Manifesto](docs/manifesto.md) | Philosophical anchor and positioning |
 | [API Specification](docs/api.md) | REST endpoints and auth |
 | [Architecture](docs/architecture.md) | Layered model, data flow, fork scenario |
 | [Trust Model](docs/trust-model.md) | Verifier-controlled trust, no embedded anchors |
