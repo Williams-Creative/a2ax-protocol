@@ -67,4 +67,3 @@ jobs:
 
       - name: Lint
         run: npm run lint
-        continue-on-error: true

@@ -16,6 +16,9 @@ cli/dist/
 
 # Secrets and env (never commit)
 backend/api/secrets/
+# Trust anchors (user-generated, from trust install or export:issuer-public)
+config/trust/anchors/*.json
+config/trust/anchors/*.pem
 backend/api/.env
 .env
 infra/.env

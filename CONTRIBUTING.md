@@ -4,7 +4,7 @@ Thank you for your interest in contributing to A2AX. We welcome contributions fr
 
 ## Code of Conduct
 
-Be respectful, inclusive, and constructive. We aim to maintain a welcoming environment for everyone.
+This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold its terms.
 
 ## How to Contribute
 
@@ -29,10 +29,21 @@ Open an issue with:
 
 1. **Fork** the repository and create a branch from `main`
 2. **Make changes** — follow existing code style
-3. **Test** — run `npm run build` and `npm test` in `backend/api`
+3. **Test** — run builds and tests (see below)
 4. **Submit** a PR with a clear description of changes
 
 ### Development Setup
+
+**Protocol (core):**
+
+```bash
+cd protocol
+npm install
+npm run build
+npm test
+```
+
+**Backend API:**
 
 ```bash
 cd backend/api
@@ -41,10 +52,21 @@ npm run build
 npm test
 ```
 
-For integration tests, start the stack first:
+**Full stack (optional):**
 
 ```bash
+# Seed dev issuer for local testing
+npm run seed:dev-issuer
+npx tsx cli/trust-bundle-install.ts community
+
+# Start stack
 docker compose -f infra/docker-compose.yml up -d
+```
+
+**Integration tests:**
+
+```bash
+cd backend/api
 ADMIN_API_KEY=your-key npm run test:integration
 ```
 

@@ -44,6 +44,7 @@ services:
       ADMIN_API_KEY: ${ADMIN_API_KEY:-replace-with-strong-admin-api-key}
       RATE_LIMIT_PER_MINUTE: "120"
       NODE_ENV: production
+      TRUST_ANCHORS_DIR: /app/config/trust/anchors
     ports:
       - "8080:8080"
     depends_on:
@@ -53,6 +54,7 @@ services:
         condition: service_healthy
     volumes:
       - ../backend/api/secrets/issuer_private_jwk.json:/run/secrets/issuer_private_jwk.json:ro
+      - ../config:/app/config:ro
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:8080/readyz || exit 1"]
       interval: 15s

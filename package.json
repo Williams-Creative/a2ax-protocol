@@ -1,0 +1,13 @@
+{
+  "name": "a2ax-protocol",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed:dev-issuer": "node scripts/seed-dev-issuer.mjs",
+    "export:issuer-public": "node scripts/export-issuer-public.mjs"
+  },
+  "dependencies": {
+    "jose": "^5.9.6"
+  }
+}

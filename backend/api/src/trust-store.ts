@@ -5,10 +5,7 @@
 
 import { readdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
-import {
-  TrustStoreInMemory,
-  type IssuerPublicKey
-} from "@a2ax/protocol";
+import { TrustStoreInMemory } from "@a2ax/protocol";
 
 let trustStoreInstance: TrustStoreInMemory | null = null;
 

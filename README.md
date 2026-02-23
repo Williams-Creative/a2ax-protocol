@@ -1,5 +1,8 @@
 # A2AX Protocol
 
+[![CI](https://github.com/Williams-Creative/a2ax-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/Williams-Creative/a2ax-protocol/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **A**gent **t**o **A**gent **E**xchange
 
 **A2AX is the open trust standard and identity layer for autonomous economic systems.** It provides verifiable identity, cryptographic verification, capability-scoped permissions, and trust scoring for AI-to-AI (A2A) interaction—enabling agents to transact, attest, and collaborate with confidence.
@@ -61,7 +64,24 @@ npm run keygen:issuer
 
 Copy `.env.example` to `.env` and set a strong `ADMIN_API_KEY` (min 16 chars).
 
-### 3. Start the stack
+### 3. (Optional) Install trust bundle
+
+To add issuer keys for portable verification:
+
+```bash
+npx tsx cli/trust-bundle-install.ts community
+```
+
+**For local testing:** Seed a dev issuer, then install:
+
+```bash
+npm run seed:dev-issuer
+npx tsx cli/trust-bundle-install.ts community
+```
+
+Bundles ship empty by default. See [Trust Bundles](docs/trust-bundles.md) to create or add issuers.
+
+### 4. Start the stack
 
 Copy `.env.example` to `.env` at project root and set `ADMIN_API_KEY`:
 
@@ -71,11 +91,13 @@ cp .env.example .env
 docker compose -f infra/docker-compose.yml up --build
 ```
 
-### 4. Verify
+### 5. Verify
 
 - `GET http://localhost:8080/healthz` → `{"ok":true}`
 - `GET http://localhost:8080/readyz` → `{"ok":true}`
 - Run pilot smoke: `ADMIN_API_KEY=your-key npm run pilot:smoke` (from `backend/api`)
+
+**Backend:** Set `TRUST_ANCHORS_DIR` (e.g. `../../config/trust/anchors`) in `backend/api/.env` to load issuer keys from the trust anchors directory. Required for portable verification against non-local issuers.
 
 ---
 
@@ -108,7 +130,11 @@ a2ax-protocol/
 | [Trust Model](docs/trust-model.md) | Verifier-controlled trust, no embedded anchors |
 | [Portable Certificates](docs/portable-certificates.md) | Verify without registry |
 | [Trust Bundles](docs/trust-bundles.md) | Installable issuer keys |
+| [Example Walkthrough](docs/example-walkthrough.md) | End-to-end flow: register, verify, handshake |
+| [Roadmap](docs/roadmap.md) | Public roadmap |
 | [Federation Roadmap](docs/federation-roadmap.md) | Cross-registry trust (future) |
+
+| [GitHub Setup](docs/github-setup.md) | Repo description, topics (for maintainers) |
 | [Governance](docs/governance.md) | Contribution, versioning, neutrality |
 | [Governance Philosophy](docs/governance-philosophy.md) | What A2AX is and is not |
 | [Cryptographic Flow](docs/crypto.md) | Ed25519, JWT, verification flow |
