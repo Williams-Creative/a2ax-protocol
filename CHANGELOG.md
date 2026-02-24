@@ -4,6 +4,20 @@ All notable changes to the A2AX Protocol are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.2] - 2026-02-24
+
+### Added
+
+- Whitepaper: LaTeX source for arXiv (whitepapers/001_A2AX_Open_Trust_Standard.tex)
+
+### Changed
+
+- architecture.md: Fix Mermaid layered diagram (quoted subgraph labels), convert handshake lifecycle to Mermaid sequence diagram
+- production-hardening.md: Convert TLS termination flow to Mermaid flowchart
+- .gitignore: Add whitepapers/drafts/
+
+---
+
 ## [0.1.1] - 2026-02-24
 
 ### Changed

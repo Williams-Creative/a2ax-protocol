@@ -219,6 +219,7 @@ a2ax-protocol/
 | [Roadmap](docs/roadmap.md)                             | Public roadmap                 |
 | [Federation Roadmap](docs/federation-roadmap.md)       | Cross-registry trust (future)  |
 | [Versioning](VERSION.md)                               | Semantic versioning rules      |
+| [Whitepaper](whitepapers/001_A2AX_Open_Trust_Standard.tex) | LaTeX source for arXiv        |
 
 ---
 
