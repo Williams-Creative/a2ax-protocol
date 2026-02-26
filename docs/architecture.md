@@ -20,11 +20,13 @@ flowchart TB
     revocation[revocation]
   end
 
-  subgraph L2 ["Layer 2:<br/>Optional Extensions"]
+  subgraph L2 ["Layer 2"]
+    L2_header["Optional Extensions"]
     TrustScoring[TrustScoring]
     Escrow[Escrow]
     Compliance[Compliance]
   end
+  style L2_header fill:#e8f5e9,stroke:#4caf50
 
   subgraph L3 ["Layer 3: Services (Future)"]
     mgmt_graph[Managed trust graph]
