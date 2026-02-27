@@ -22,7 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - architecture-layered.svg: Fix Layer 2 obscured text (increased padding); Layer 1 label to A2AX-Core Protocol
 - README, specification, manifesto, governance, governance-philosophy, roadmap, enterprise-onboarding, security, trust-model, portable-certificates, github-setup, example-walkthrough: A2AX-Core naming
 - TRADEMARK.md, CONTRIBUTING.md, VERSION.md, SECURITY.md: A2AX-Core naming
-- whitepapers/001_A2AX_Open_Trust_Standard.tex: A2AX-Core naming
+- whitepapers/001_A2AX_Open_Trust_Standard.tex: A2AX-Core naming; aligned with specification v1.0 and project scope (Terminology, Non-Goals, A2AX Ecosystem, Portable Agent Identity Certificate, expanded threat model, roadmap, spec reference)
+- README.md: Table column alignment
 
 ---
 

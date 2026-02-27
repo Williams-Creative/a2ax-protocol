@@ -215,7 +215,7 @@ a2ax-protocol/
 | [API Specification](docs/api.md)                       | REST endpoints                 |
 | [Example Walkthrough](docs/example-walkthrough.md)     | End-to-end flow                |
 | [Governance](docs/governance.md)                       | Contribution and neutrality    |
-| [Governance Philosophy](docs/governance-philosophy.md) | What A2AX-Core is and is not        |
+| [Governance Philosophy](docs/governance-philosophy.md) | What A2AX-Core is and is not   |
 | [Security](docs/security.md)                           | Revocation and key rotation    |
 | [Production Hardening](docs/production-hardening.md)   | KMS, TLS, audit archiving      |
 | [Deployment & Pilot](docs/deployment-and-pilot.md)     | Rollout and rollback           |
@@ -223,8 +223,8 @@ a2ax-protocol/
 | [Roadmap](docs/roadmap.md)                             | Public roadmap                 |
 | [Federation Roadmap](docs/federation-roadmap.md)       | Cross-registry trust (future)  |
 | [Versioning](VERSION.md)                               | Semantic versioning rules      |
-| [Whitepaper](whitepapers/001_A2AX_Open_Trust_Standard.tex) | LaTeX source for arXiv        |
-| [Release Notes v0.1.3](RELEASE_NOTES_v0.1.3.md) | Public release notes          |
+| [Whitepaper](whitepapers/001_A2AX_Open_Trust_Standard.tex) | LaTeX source for arXiv     |
+| [Release Notes v0.1.3](RELEASE_NOTES_v0.1.3.md)        | Public release notes           |
 
 ---
 
