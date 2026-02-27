@@ -16,7 +16,7 @@ cd ../..
 npm run export:issuer-public
 ```
 
-This creates the issuer key and exports the public key to `config/trust/anchors/a2ax-protocol.json`. The API loads trust anchors when `TRUST_ANCHORS_DIR` is set (see docker-compose or backend `.env`).
+This creates the issuer key and exports the public key to `config/trust/anchors/a2ax-core-protocol.json`. The API loads trust anchors when `TRUST_ANCHORS_DIR` is set (see docker-compose or backend `.env`).
 
 ## Step 2: Start the stack
 

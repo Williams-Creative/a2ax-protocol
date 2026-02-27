@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - TRADEMARK.md, CONTRIBUTING.md, VERSION.md, SECURITY.md: A2AX-Core naming
 - whitepapers/001_A2AX_Open_Trust_Standard.tex: A2AX-Core naming; aligned with specification v1.0 and project scope (Terminology, Non-Goals, A2AX Ecosystem, Portable Agent Identity Certificate, expanded threat model, roadmap, spec reference)
 - README.md: Table column alignment
+- **Internal identifiers:** issuer claim `iss`, trust anchor filename, package name: `a2ax-protocol` → `a2ax-core-protocol` (issuer-signer, export-issuer-public, package.json, docs)
 
 ---
 

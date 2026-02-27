@@ -1,6 +1,6 @@
 # A2AX-Core
 
-[![CI](https://github.com/Williams-Creative/a2ax-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/Williams-Creative/a2ax-protocol/actions/workflows/ci.yml)
+[![CI](https://github.com/Williams-Creative/a2ax-core-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/Williams-Creative/a2ax-core-protocol/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Open Trust Infrastructure for Autonomous Agents**
@@ -106,8 +106,8 @@ The core remains open, neutral, and self-hostable.
 ## 1. Clone and Setup
 
 ```bash
-git clone https://github.com/Williams-Creative/a2ax-protocol.git
-cd a2ax-protocol
+git clone https://github.com/Williams-Creative/a2ax-core-protocol.git
+cd a2ax-core-protocol
 ```
 
 ---
@@ -183,7 +183,7 @@ Set `TRUST_ANCHORS_DIR` (e.g. `../../config/trust/anchors`) in `backend/api/.env
 # Project Structure
 
 ```
-a2ax-protocol/
+a2ax-core-protocol/
 ├── protocol/             # Core trust logic (identity, crypto, handshake, trust store, policy)
 ├── config/               # defaultPolicy.yaml, trust/anchors/
 ├── bundles/              # Optional trust bundles (community, enterprise)

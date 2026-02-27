@@ -79,7 +79,7 @@ Base URL: `http://localhost:8080/v1`
   "payload": {
     "agent_id": "agt_xyz789",
     "org_id": "org_abc123",
-    "iss": "a2ax-protocol",
+    "iss": "a2ax-core-protocol",
     "exp": 1234567890
   }
 }

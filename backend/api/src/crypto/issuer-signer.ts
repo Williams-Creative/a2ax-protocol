@@ -48,7 +48,7 @@ class FileJwkSigner implements IssuerSigner {
     return await new SignJWT(payload)
       .setProtectedHeader({ alg: "EdDSA", kid: this.kid, typ: "JWT" })
       .setIssuedAt()
-      .setIssuer("a2ax-protocol")
+      .setIssuer("a2ax-core-protocol")
       .setExpirationTime("30d")
       .sign(key);
   }
@@ -71,7 +71,7 @@ async function createKmsSigner(): Promise<IssuerSigner> {
       const payloadWithClaims = {
         ...payload,
         iat: now,
-        iss: "a2ax-protocol",
+        iss: "a2ax-core-protocol",
         exp: now + 30 * 86400
       };
       const headerB64 = Buffer.from(JSON.stringify(header)).toString("base64url");

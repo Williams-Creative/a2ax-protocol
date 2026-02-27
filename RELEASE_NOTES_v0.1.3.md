@@ -153,8 +153,8 @@ This is the first public release of the A2AX protocol core.
 ## Quick Start
 
 ```bash
-git clone https://github.com/Williams-Creative/a2ax-protocol.git
-cd a2ax-protocol
+git clone https://github.com/Williams-Creative/a2ax-core-protocol.git
+cd a2ax-core-protocol
 ```
 
 See the README for full setup instructions and the example walkthrough in:
