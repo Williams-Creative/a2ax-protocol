@@ -1,6 +1,8 @@
 % A2AX-Core: The Open Trust Standard for Autonomous Agents
 % Protocol Specification v1.0 | Release v0.1.3 | MIT License | Williams Creative | February 2026
 % arXiv submission: cs (Computer Science) — cs.CR, cs.AI, or cs.MA
+%
+% Companion documents: 002 A2AX-Core Overview (Informational), 003 A2AX-Core Protocol Specification (Normative)
 
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
@@ -49,7 +51,7 @@
 }
 
 \title{A2AX-Core: The Open Trust Standard for Autonomous Agents}
-\author{Darrell Williams - Williams Creative}
+\author{Darrell Williams\\Williams Creative}
 \date{February 2026}
 
 \begin{document}
@@ -110,7 +112,7 @@ The protocol is organized in three layers:
 \toprule
 \textbf{Layer} & \textbf{Scope} & \textbf{Contents} \\
 \midrule
-Layer 1 & A2AX-Core Protocol & Identity, crypto, handshake, permissions, attestation, audit, version, revocation \\
+Layer 1 & A2AX-Core Protocol & Identity, crypto, handshake, permissions, attestation, events, audit, version, revocation \\
 Layer 2 & Optional Extensions & Trust scoring, Escrow, Compliance \\
 Layer 3 & Services (Future) & Managed trust graph, dashboards, analytics, economic services \\
 \bottomrule
@@ -158,21 +160,16 @@ Verification policy is verifier-controlled; no mandatory central registry is req
 \begin{itemize}
   \item \textbf{GitHub Repository} --- \url{https://github.com/Williams-Creative/a2ax-core-protocol}
   \item \textbf{SDKs} --- TypeScript and Python
-  \item \textbf{CLI Tools} --- Trust bundle install, dev issuer seed, certificate export
+  \item \textbf{CLI Tools} --- Trust bundle install (\texttt{a2ax trust install}), dev issuer seed (\texttt{npm run seed:dev-issuer}), certificate export (\texttt{npm run export:issuer-public} to \texttt{config/trust/anchors/a2ax-core-protocol.json})
 \end{itemize}
 
-Reference implementations demonstrate protocol mechanics; the standard is defined in the specification. Example certificate structure:
+Reference implementations demonstrate protocol mechanics; the standard is defined in the specification. Identity certificates are JWTs (JWS compact) with claims:
 
 \needspace{8\baselineskip}
-\begin{lstlisting}[caption={Example agent certificate structure.}]
-{
-  "agent_id": "a2ax:agent:1234",
-  "capabilities": {
-    "transfer": {"limit": 1000, "currency": "USD"},
-    "query": {"scope": "inventory"}
-  },
-  "signature": "ed25519:..."
-}
+\begin{lstlisting}[caption={Identity Certificate structure (JWT claims).}]
+agent_id, public_jwk, org_id (optional),
+capability_manifest_hash (optional), iss, exp,
+revocation_url (optional)
 \end{lstlisting}
 
 \section{Security and Threat Model}
@@ -219,6 +216,10 @@ A2AX-Core is infrastructure---the trust substrate upon which autonomous economic
 \section{Roadmap}
 
 \textbf{Near-term (done):} Trust bundle implementation, dev/demo community bundle. \textbf{Near-term (in progress):} Federation design (issuer discovery, remote issuer fetch API, trust sync semantics). \textbf{Medium-term:} Federation implementation, cross-registry trust. \textbf{Long-term:} Escrow semantics, attestation chains, delegation chains. Protocol changes require spec update and compatibility verification.
+
+\section{Companion Documents}
+
+This whitepaper is the primary narrative document. For a shorter informational overview, see \textbf{002 A2AX-Core Overview (Informational)}. For the normative specification with formal conformance language (MUST, SHOULD, etc.), see \textbf{003 A2AX-Core Protocol Specification}.
 
 \section{Conclusion}
 

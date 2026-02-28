@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "seed:dev-issuer": "node scripts/seed-dev-issuer.mjs",
-    "export:issuer-public": "node scripts/export-issuer-public.mjs"
+    "export:issuer-public": "node scripts/export-issuer-public.mjs",
+    "build:whitepapers": "cd whitepapers && bash build.sh"
   },
   "dependencies": {
     "jose": "^5.9.6"

@@ -1,0 +1,194 @@
+% A2AX-Core Protocol — Informational Overview (Companion Document)
+% Release v0.1.3 | Protocol Specification v1.0 | MIT License | Williams Creative | February 2026
+%
+% Companion to: 001 A2AX-Core Open Trust Standard (Main Whitepaper), 003 A2AX-Core Protocol Specification (Normative)
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage[parfill]{parskip}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\title{A2AX-Core Protocol\\Informational Overview}
+\author{Williams Creative}
+\date{Companion Document \\ Version 0.1.3}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document provides an informational overview of the A2AX-Core Protocol. It is not normative. The normative specification is defined in the A2AX-Core Protocol Specification (003).
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Purpose}
+
+A2AX-Core defines a neutral trust substrate for autonomous agents. It enables portable identity, verifier-controlled trust decisions, and secure agent-to-agent coordination without centralized registries or embedded authority.
+
+This document is informational. The normative specification is defined in the A2AX-Core Protocol Specification.
+
+\section{Why A2AX-Core Exists}
+
+Autonomous agents increasingly coordinate across systems, organizations, and jurisdictions. Intelligence alone does not ensure safe interaction. A portable and cryptographically verifiable trust layer is required.
+
+A2AX-Core addresses this gap by defining minimal, implementation-neutral trust primitives.
+
+\section{Core Properties}
+
+\begin{itemize}[leftmargin=*]
+    \item Portable identity certificates
+    \item Verifier-controlled trust model
+    \item No mandatory trust anchors
+    \item No centralized registry requirement
+    \item Capability-scoped permissions
+    \item Secure agent-to-agent handshake
+\end{itemize}
+
+The protocol is infrastructure---not marketplace, governance system, or economic layer.
+
+\section{Layered Architecture}
+
+\begin{quote}
+Application / Agent Layer \\
+$\downarrow$ \\
+A2AX-Core Protocol Layer (Identity + Verification + Handshake) \\
+$\downarrow$ \\
+Verifier Trust Policy Layer \\
+$\downarrow$ \\
+Optional Extensions (Economic, Compliance, Analytics)
+\end{quote}
+
+The core remains minimal and neutral.
+
+\section{What A2AX-Core Is Not}
+
+A2AX-Core does not define:
+
+\begin{itemize}[leftmargin=*]
+    \item Token systems
+    \item Market mechanisms
+    \item Economic valuation
+    \item Governance frameworks
+    \item Centralized infrastructure
+\end{itemize}
+
+Higher-order systems may build on A2AX-Core but remain external to it.
+
+\section{Neutrality Principle}
+
+Trust is determined exclusively by the verifier.
+
+No global root of trust exists.
+
+No organization controls protocol validity.
+
+Neutrality is structural, not rhetorical.
+
+\section{Intended Audience}
+
+\begin{itemize}[leftmargin=*]
+    \item Protocol implementers
+    \item Multi-agent system architects
+    \item Infrastructure engineers
+    \item Standards and governance bodies
+\end{itemize}
+
+\section{Relationship to the Specification}
+
+The A2AX-Core Protocol Specification defines normative requirements using formal conformance language (MUST, SHOULD, etc.).
+
+This overview provides architectural context and positioning clarity.
+
+\section{Long-Term Vision}
+
+A2AX-Core aims to serve as a portable, minimal trust standard for autonomous agent coordination across ecosystems.
+
+Its durability depends on neutrality, verifier sovereignty, and strict scope boundaries.
+
+\section{Threat Model (Informational Summary)}
+
+A2AX-Core assumes the presence of capable adversaries operating at the network, agent, and ecosystem levels.
+
+The protocol is designed to mitigate:
+
+\begin{itemize}[leftmargin=*]
+    \item Certificate forgery attempts
+    \item Message replay attacks
+    \item Capability escalation attempts
+    \item Malicious but cryptographically valid agents
+    \item Centralization pressure through mandatory trust anchors
+\end{itemize}
+
+A2AX-Core does \textbf{not} attempt to mitigate:
+
+\begin{itemize}[leftmargin=*]
+    \item Economic fraud
+    \item Marketplace manipulation
+    \item Behavioral dishonesty
+    \item Global revocation enforcement
+\end{itemize}
+
+The protocol guarantees cryptographic authenticity, not behavioral integrity.
+
+\section{Adversary Classes}
+
+\textbf{Class A --- Network Adversary}
+
+May intercept, replay, or inject traffic.
+
+\textbf{Class B --- Malicious Certified Agent}
+
+Possesses valid credentials but behaves dishonestly.
+
+\textbf{Class C --- Compromised Key Holder}
+
+Private key material has been exposed.
+
+\textbf{Class D --- Centralization Actor}
+
+Attempts to impose mandatory trust anchors or ecosystem control.
+
+Mitigation across classes is achieved through signature validation, nonce enforcement, expiration limits, and strict verifier sovereignty.
+
+\section{Separation of Concerns}
+
+A2AX-Core enforces structural separation between four distinct concepts.
+
+\subsection{Identity}
+
+Cryptographic binding between an agent identifier and a public key.
+
+Answers: \textit{Who signed this message?}
+
+\subsection{Capability}
+
+Declared functional scope cryptographically bound to identity.
+
+Answers: \textit{What does this agent claim it can do?}
+
+Capabilities are claims, not guarantees.
+
+\subsection{Trust}
+
+A verifier-local decision derived from policy.
+
+Answers: \textit{Do I accept interaction under my rules?}
+
+Trust is never embedded in the certificate.
+
+\subsection{Reputation (Out of Scope)}
+
+Accumulated behavioral or economic history over time.
+
+Answers: \textit{How has this agent behaved historically?}
+
+Reputation is explicitly external to A2AX-Core and MUST NOT be embedded within the core protocol layer.
+
+\end{document}

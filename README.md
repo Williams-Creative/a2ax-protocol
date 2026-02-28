@@ -202,7 +202,7 @@ a2ax-core-protocol/
 
 | Document                                               | Description                    |
 | ------------------------------------------------------ | ------------------------------ |
-| [Protocol Identity Charter](docs/PROTOCOL_IDENTITY_CHARTER) | Naming doctrine, scope, principles |
+| [Protocol Identity Charter](docs/PROTOCOL_IDENTITY_CHARTER.md) | Naming doctrine, scope, principles |
 | [Specification](docs/specification.md)                 | Formal protocol definition     |
 | [Manifesto](docs/manifesto.md)                         | Philosophical anchor           |
 | [Architecture](docs/architecture.md)                   | Layered model and data flow    |
@@ -223,7 +223,10 @@ a2ax-core-protocol/
 | [Roadmap](docs/roadmap.md)                             | Public roadmap                 |
 | [Federation Roadmap](docs/federation-roadmap.md)       | Cross-registry trust (future)  |
 | [Versioning](VERSION.md)                               | Semantic versioning rules      |
-| [Whitepaper](whitepapers/001_A2AX_Open_Trust_Standard.tex) | LaTeX source for arXiv     |
+| [Whitepapers](whitepapers/README.md)                    | LaTeX sources and build       |
+| [001 Open Trust Standard](whitepapers/001_A2AX_Core_Open_Trust_Standard.tex) | Main whitepaper (arXiv) |
+| [002 Overview (Informational)](whitepapers/002_A2AX_Core_Overview_Informational.tex) | Companion overview |
+| [003 Protocol Specification](whitepapers/003_A2AX_Core_Protocol_Specification.tex) | Normative spec |
 | [Release Notes v0.1.3](RELEASE_NOTES_v0.1.3.md)        | Public release notes           |
 
 ---

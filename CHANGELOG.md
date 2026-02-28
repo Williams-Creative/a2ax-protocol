@@ -15,16 +15,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- **Protocol rename:** A2AX → A2AX-Core. The protocol is now formally referred to as A2AX-Core to reflect its role as the foundational trust substrate of the A2AX ecosystem. The core protocol remains unchanged. See [PROTOCOL_IDENTITY_CHARTER](docs/PROTOCOL_IDENTITY_CHARTER) for naming doctrine.
+- **Protocol rename:** A2AX → A2AX-Core. The protocol is now formally referred to as A2AX-Core to reflect its role as the foundational trust substrate of the A2AX ecosystem. The core protocol remains unchanged. See [PROTOCOL_IDENTITY_CHARTER](docs/PROTOCOL_IDENTITY_CHARTER.md) for naming doctrine.
 - architecture.md: Add SVG fallbacks for layered and handshake diagrams; fix Layer 2 Mermaid label overlap; Layer 1 label to A2AX-Core Protocol
 - production-hardening.md: Add SVG fallback for TLS termination flow
 - handshake-lifecycle.svg: Fix dark text on dark background (white bg, improved contrast)
 - architecture-layered.svg: Fix Layer 2 obscured text (increased padding); Layer 1 label to A2AX-Core Protocol
 - README, specification, manifesto, governance, governance-philosophy, roadmap, enterprise-onboarding, security, trust-model, portable-certificates, github-setup, example-walkthrough: A2AX-Core naming
 - TRADEMARK.md, CONTRIBUTING.md, VERSION.md, SECURITY.md: A2AX-Core naming
-- whitepapers/001_A2AX_Open_Trust_Standard.tex: A2AX-Core naming; aligned with specification v1.0 and project scope (Terminology, Non-Goals, A2AX Ecosystem, Portable Agent Identity Certificate, expanded threat model, roadmap, spec reference)
+- whitepapers/001_A2AX_Core_Open_Trust_Standard.tex: Renamed from 001_A2AX_Open_Trust_Standard.tex; A2AX-Core naming; aligned with specification v1.0 and project scope (Terminology, Non-Goals, A2AX Ecosystem, Portable Agent Identity Certificate, expanded threat model, roadmap, spec reference, companion docs, events in architecture, JWT certificate structure, trust anchor path)
+- whitepapers/002_A2AX_Core_Overview_Informational.tex: Informational companion (positioning, high-level)
+- whitepapers/003_A2AX_Core_Protocol_Specification.tex: Normative specification (MUST, SHOULD conformance)
+- whitepapers/README.md, build.sh, build.ps1: PDF build scripts; npm run build:whitepapers
 - README.md: Table column alignment
 - **Internal identifiers:** issuer claim `iss`, trust anchor filename, package name: `a2ax-protocol` → `a2ax-core-protocol` (issuer-signer, export-issuer-public, package.json, docs)
+- whitepapers/001: author format; PDFs added (001, 002, 003); whitepapers/README.md table with Source and PDF links
+- docs/PROTOCOL_IDENTITY_CHARTER: add .md extension
 
 ---
 
@@ -32,7 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- Whitepaper: LaTeX source for arXiv (whitepapers/001_A2AX_Open_Trust_Standard.tex)
+- Whitepaper: LaTeX source for arXiv (whitepapers/001_A2AX_Core_Open_Trust_Standard.tex)
 
 ### Changed
 

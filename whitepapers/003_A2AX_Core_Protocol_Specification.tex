@@ -1,0 +1,234 @@
+% A2AX-Core Protocol — Normative Specification
+% Release v0.1.3 | Protocol Specification v1.0 | MIT License | Williams Creative | February 2026
+%
+% Companion to: 001 A2AX-Core Open Trust Standard (Main Whitepaper), 002 A2AX-Core Overview (Informational)
+
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{courier}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+\title{A2AX-Core Protocol Specification}
+\author{Williams Creative}
+\date{Intended Status: Standards Track \\ Version 0.1.3}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document defines the normative specification of the A2AX-Core Protocol. It standardizes portable identity certificates, cryptographic verification requirements, capability declaration semantics, trust store behavior, and an agent-to-agent handshake mechanism. The protocol is neutral, verifier-controlled, and registry-independent.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Status of This Document}
+
+This document specifies version 0.1.3 of the A2AX-Core Protocol.
+
+The key words ``MUST'', ``MUST NOT'', ``REQUIRED'', ``SHALL'', ``SHOULD'', ``SHOULD NOT'', ``RECOMMENDED'', ``MAY'', and ``OPTIONAL'' are to be interpreted as described in RFC 2119.
+
+\section{Terminology}
+
+\textbf{Agent} --- Autonomous computational system capable of initiating interactions.
+
+\textbf{Identity Certificate} --- Self-contained cryptographically signed artifact binding an Agent identifier to capabilities.
+
+\textbf{Issuer} --- Entity that signs Identity Certificates.
+
+\textbf{Verifier} --- Entity validating certificates and applying local trust policy.
+
+\textbf{Trust Store} --- Local collection of trusted issuer public keys.
+
+\section{Separation of Concerns}
+
+A2AX-Core enforces strict structural separation between identity, capability, trust, and reputation.
+
+\subsection{Identity}
+
+Identity is the cryptographic binding between an agent identifier and a public key.
+
+Identity answers: ``Who signed this message?''
+
+Identity MUST NOT imply competence, reliability, honesty, or economic value.
+
+\subsection{Capability}
+
+Capabilities are declared functional scopes cryptographically bound to identity.
+
+Capability answers: ``What does this agent claim it can do?''
+
+Capabilities are claims and MUST NOT be interpreted as guarantees.
+
+\subsection{Trust}
+
+Trust is a verifier-local policy decision.
+
+Trust answers: ``Do I accept interaction under my rules?''
+
+Trust MUST remain exclusively under verifier control and MUST NOT be embedded within certificates.
+
+\subsection{Reputation (Out of Scope)}
+
+Reputation represents accumulated behavioral or economic history over time.
+
+Reputation systems MAY exist externally but MUST NOT be embedded into the A2AX-Core protocol layer.
+
+The core protocol SHALL NOT define scoring, ranking, weighting, or economic valuation mechanisms.
+
+\section{Protocol Overview}
+
+The protocol defines:
+
+\begin{itemize}[leftmargin=*]
+    \item Identity Certificate structure
+    \item Verification algorithm
+    \item Trust store requirements
+    \item Capability declaration semantics
+    \item Agent-to-Agent (A2A) handshake procedure
+\end{itemize}
+
+\section{Identity Certificate Structure}
+
+An Identity Certificate MUST include:
+
+\begin{itemize}[leftmargin=*]
+    \item Agent identifier
+    \item Issuer identifier
+    \item Agent public key (Ed25519)
+    \item Capability declarations
+    \item Issuance timestamp
+    \item Expiration timestamp
+    \item Digital signature (Ed25519)
+\end{itemize}
+
+Certificates MUST be self-contained and MUST NOT require registry lookup for validation.
+
+\section{Verification Algorithm}
+
+Verification MUST proceed in the following order:
+
+\begin{enumerate}[leftmargin=*]
+    \item Validate signature using issuer public key
+    \item Validate expiration timestamp
+    \item Validate issuance timestamp
+    \item Enforce nonce replay protection
+    \item Apply local trust policy
+\end{enumerate}
+
+Verification MUST fail if any step fails.
+
+\section{Trust Store Requirements}
+
+\begin{itemize}[leftmargin=*]
+    \item Trust stores MUST be locally configurable
+    \item Trust stores MAY be empty
+    \item No mandatory global root of trust SHALL exist
+\end{itemize}
+
+\section{Agent-to-Agent Handshake}
+
+Handshake procedure:
+
+\begin{enumerate}[leftmargin=*]
+    \item Exchange Identity Certificates
+    \item Perform verification algorithm
+    \item Validate replay nonce
+    \item Negotiate permitted capabilities
+    \item Establish secure session context
+\end{enumerate}
+
+Handshake MUST terminate upon verification failure.
+
+\section{Threat Model}
+
+The protocol assumes adversaries MAY:
+
+\begin{itemize}[leftmargin=*]
+    \item Attempt to forge identity certificates
+    \item Replay previously valid handshake messages
+    \item Attempt capability escalation
+    \item Compromise non-hardware-protected private keys
+    \item Operate malicious but cryptographically valid agents
+\end{itemize}
+
+The protocol assumes adversaries CANNOT:
+
+\begin{itemize}[leftmargin=*]
+    \item Break Ed25519 cryptographic primitives
+    \item Forge signatures without private key compromise
+    \item Override verifier-controlled trust policy
+\end{itemize}
+
+A2AX-Core guarantees cryptographic authenticity, not behavioral integrity.
+
+\section{Adversary Assumptions}
+
+\textbf{Class A --- Network Adversary}
+
+May intercept, replay, or inject traffic. Mitigated via signature validation, expiration enforcement, and nonce replay protection.
+
+\textbf{Class B --- Malicious Certified Agent}
+
+Possesses a valid certificate but behaves dishonestly. Mitigated through verifier-controlled trust policy.
+
+\textbf{Class C --- Compromised Key Holder}
+
+Private key material has been exposed. Mitigated via expiration limits and optional short-lived certificates. Global revocation is out of scope.
+
+\textbf{Class D --- Centralization Actor}
+
+Attempts to impose mandatory trust anchors or ecosystem control. Mitigated through structural neutrality and locally configurable trust stores.
+
+\section{Security Considerations}
+
+Implementations MUST protect private keys.
+
+Replay protection MUST be enforced.
+
+Clock synchronization SHOULD be considered.
+
+Hardware-backed key storage is RECOMMENDED where available.
+
+\section{Privacy Considerations}
+
+Capability declarations SHOULD follow data minimization principles.
+
+Identifiers SHOULD avoid embedding personally identifiable information.
+
+\section{Extensibility}
+
+Extensions MUST NOT alter core verification semantics.
+
+Future capability namespaces MAY be registered via documented extension processes.
+
+\section{Conformance}
+
+An implementation conforms to this specification if it:
+
+\begin{itemize}[leftmargin=*]
+    \item Implements the required Identity Certificate structure
+    \item Implements the full Verification Algorithm
+    \item Enforces Trust Store requirements
+    \item Correctly executes the A2A handshake procedure
+\end{itemize}
+
+\section{Governance and Versioning}
+
+Protocol changes require public proposal, documented rationale, and semantic version updates.
+
+Backward compatibility SHOULD be preserved where possible.
+
+\section{Fork Test Guarantee}
+
+Removal of any specific organization, service, or ecosystem reference MUST NOT break protocol functionality.
+
+\end{document}

@@ -112,7 +112,7 @@ A2AX-Core replaces implicit trust with verifiable trust.
 
 ## What's Included in v0.1.3
 
-This is the first public release of the A2AX protocol core.
+This is the first public release of the A2AX-Core protocol.
 
 ### Trust Bundle System
 
@@ -128,7 +128,7 @@ This is the first public release of the A2AX protocol core.
 
 ### Portable Verification Tools
 
-* `npm run export:issuer-public`
+* `npm run export:issuer-public` — exports issuer public key to `config/trust/anchors/a2ax-core-protocol.json`
 * Registry-free verification flow
 * Verifier-side trust store configuration
 

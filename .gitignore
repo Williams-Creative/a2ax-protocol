@@ -53,6 +53,8 @@ docs/FINAL_VERIFICATION.md
 
 # Whitepaper drafts (not for public repo)
 whitepapers/drafts/
+# Whitepaper build output
+whitepapers/pdf/
 
 # Internal planning / working docs
 *_docx_extract.docx
